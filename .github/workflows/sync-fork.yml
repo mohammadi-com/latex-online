@@ -13,6 +13,11 @@ jobs:
       - name: Checkout Fork
         uses: actions/checkout@v3
 
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
       - name: Add Upstream Repository
         run: |
           git remote add upstream https://github.com/aslushnikov/latex-online.git
